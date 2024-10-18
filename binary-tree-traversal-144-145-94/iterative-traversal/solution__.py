@@ -33,7 +33,7 @@ class Solution:
         result = []
         stack.append(root)
 
-        # mid right left
+        # mid right left and then reverse
         while stack:
             processing = stack.pop()
             result.append(processing.val)
@@ -52,6 +52,7 @@ class Solution:
         result = []
 
         curr = root
+
 
         while curr or stack:
             if curr is not None:
