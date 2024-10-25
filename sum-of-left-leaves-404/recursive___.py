@@ -16,11 +16,17 @@ class Solution:
         if root.left is None and root.right is None:
             return 0
 
-        left_value = self.sumOfLeftLeaves(root.left)
+        # left_value = self.sumOfLeftLeaves(root.left)
+        # if root.left and root.left.left is None and root.left.right is None:
+        #     left_value = root.left.val
+        #
+        # right_value = self.sumOfLeftLeaves(root.right)
+        #
+        # return left_value + right_value
+
+        left_value = 0
         if root.left and root.left.left is None and root.left.right is None:
             left_value = root.left.val
 
-        right_value = self.sumOfLeftLeaves(root.right)
-
-        return left_value + right_value
+        return left_value + self.sumOfLeftLeaves(root.left) + self.sumOfLeftLeaves(root.right)
 
