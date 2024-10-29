@@ -13,6 +13,7 @@ class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         stack = []
         pre = None
+<<<<<<< HEAD
         curr = root
 
         while curr is not None or len(stack) > 0:
@@ -26,5 +27,20 @@ class Solution:
                     return False
                 pre = curr
                 curr = curr.right
+=======
+        cur = root
+
+        while cur is not None or len(stack) > 0:
+            if cur is not None:
+                stack.append(cur)
+                cur = cur.left
+
+            else:
+                cur = stack.pop()
+                if pre is not None and pre.val >= cur.val:
+                    return False
+                pre = cur
+                cur = cur.right
+>>>>>>> origin/master
         return True
 
