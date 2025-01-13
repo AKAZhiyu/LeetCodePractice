@@ -12,7 +12,7 @@ class Solution:
             return
         # For pruning, we shall consider if there is enough element for us to choose
         # we shall make sure that: in our backtracking, our start_index <= n - (k - len(path)) + 1
-        # origin is (n + 1 - start_index > k - len(path))
+        # origin is (n + 1 - start_index >= k - len(path))
         for i in range(start_index, n - (k - len(path)) + 1 + 1):
             path.append(i)
             self.backtracking(n, k, path, i + 1, results)
