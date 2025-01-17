@@ -2,7 +2,8 @@ from typing import List
 
 
 class Solution:
-    def permute(self, nums: List[int]) -> List[List[int]]:
+    def permuteUnique(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()
         results = []
         self.backtracking(nums, len(nums) * [False], results, [])
         return results
@@ -13,6 +14,9 @@ class Solution:
             return
 
         for i in range(len(nums)):
+            if i > 0 and nums[i - 1] == nums[i] and not used[i - 1]:
+                continue
+
             if not used[i]:
                 used[i] = True
                 path.append(nums[i])
