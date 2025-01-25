@@ -8,14 +8,22 @@ class Solution:
 
         steps, current_cover, next_cover = 0, 0, 0
 
-        for i in range(len(nums)):
+        # for i in range(len(nums)):
+        #     next_cover = max(next_cover, nums[i] + i)
+        #
+        #     if i == current_cover:
+        #         current_cover = next_cover
+        #         steps += 1
+        #         if next_cover >= len(nums) - 1:
+        #             break
+        #
+        # return steps
+        for i in range(len(nums) - 1):
             next_cover = max(next_cover, nums[i] + i)
 
             if i == current_cover:
                 current_cover = next_cover
                 steps += 1
-                if next_cover >= len(nums) - 1:
-                    break
 
         return steps
 
