@@ -11,6 +11,7 @@ class Solution:
             for word in wordDict:
                 if len(word) > i:
                     continue
+
                 if dp[i - len(word)] and word == s[i - len(word): i]:
                     dp[i] = True
         return dp[-1]
