@@ -6,6 +6,7 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 class Solution:
     def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
         curr = head
@@ -15,8 +16,7 @@ class Solution:
             n += 1
 
         curr = head
-        p0 = dummy = ListNode(next=head)
-        pre = None
+        pre = p0 = dummy = ListNode(next=head)
 
         while n >= k:
             n -= k
@@ -26,9 +26,9 @@ class Solution:
                 pre = curr
                 curr = nxt
 
-            nxt = p0.next  # origin head, curr queue end
+            temp = p0.next  # origin head, curr queue end
             p0.next.next = curr
             p0.next = pre
-            p0 = nxt
+            p0 = temp
 
         return dummy.next
