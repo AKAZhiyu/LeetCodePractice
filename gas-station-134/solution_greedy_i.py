@@ -26,3 +26,19 @@ class Solution:
                 return i
 
         return -1
+
+
+
+# class Solution:
+#     def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
+#         result = 0
+#         left, min_left = 0, 0
+#         for i in range(len(gas)):
+#             left += gas[i] - cost[i]
+#             if left < min_left:
+#                 min_left = left
+#                 result = i + 1
+#
+#         return result if left >= 0 else -1
+
+
