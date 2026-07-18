@@ -18,13 +18,13 @@ class Solution:
         queue = deque([root])
 
         while queue:
-            level = []
+            # level = []
             level_size = len(queue)
             prev = None
 
             for i in range(level_size):
                 node = queue.popleft()
-                level.append(node.val)
+                # level.append(node.val)
 
                 if prev:
                     prev.next = node
