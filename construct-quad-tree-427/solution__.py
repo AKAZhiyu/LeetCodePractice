@@ -1,3 +1,7 @@
+"""
+# Definition for a QuadTree node.
+
+"""
 from typing import List
 
 
@@ -9,6 +13,7 @@ class Node:
         self.topRight = topRight
         self.bottomLeft = bottomLeft
         self.bottomRight = bottomRight
+
 class Solution:
     def construct(self, grid: List[List[int]]) -> 'Node':
         m, n = len(grid), len(grid[0])
